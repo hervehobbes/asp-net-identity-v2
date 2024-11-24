@@ -7,11 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace IdentityNetCore.Controllers;
 
-public class IdentityController(
-    UserManager<IdentityUser> userManager,
-    SignInManager<IdentityUser> signInManager,
-    IEmailSender emailSender)
-    : Controller
+public class IdentityController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IEmailSender emailSender) : Controller
 {
     public Task<IActionResult> Signup()
     {

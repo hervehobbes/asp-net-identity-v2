@@ -54,10 +54,8 @@ void ConfigureServices(IServiceCollection services)
         options.Password.RequiredLength = 3;
         options.Password.RequireDigit = true;
         options.Password.RequireNonAlphanumeric = false;
-
         options.Lockout.MaxFailedAccessAttempts = 3;
         options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(10);
-
         options.SignIn.RequireConfirmedEmail = true;
     });
 
@@ -65,7 +63,7 @@ void ConfigureServices(IServiceCollection services)
     {
         option.LoginPath = "/Identity/Signin";
         option.AccessDeniedPath = "/Identity/AccessDenied";
-        option.ExpireTimeSpan = TimeSpan.FromHours(10);
+        option.ExpireTimeSpan = TimeSpan.FromHours(1);
     });
 
     services.Configure<SmtpOptions>(smtp);
